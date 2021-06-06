@@ -24,7 +24,7 @@ namespace TicketSystem.Db.Operations
         {
             using (var context = new TicketSystemDBEntities())
             {
-                var dbResult = context.Ticket.Where(tic => tic.Description.Contains(search)).ToList();
+                var dbResult = context.Ticket.Where(tic => tic.Description.Contains(search)).ToList();  //return list of tickets, if their descriptions contains the keyword
                 var tickets = ListTicketToListTicketModel(dbResult);
                 return tickets;
             }
@@ -33,12 +33,15 @@ namespace TicketSystem.Db.Operations
         {
             using (var context = new TicketSystemDBEntities())
             {
+                //return a list of tickets, grouped by project
+                //to show number of tickets per project
                 var dbResult = context.Database.SqlQuery<TicketGroupByProjectModel>("SELECT[ProjectName], COUNT(*) as 'TicketCount' FROM[dbo].[Ticket] GROUP BY[ProjectName] ORDER BY[ProjectName]").ToList();
                 return dbResult;
             }
         }
         private List<TicketModel> ListTicketToListTicketModel(List<Ticket> dbResult)
         {
+            //convert List<Ticket> to List<TicketModel> 
             var tickets = new List<TicketModel>();
 
             foreach (var tic in dbResult)

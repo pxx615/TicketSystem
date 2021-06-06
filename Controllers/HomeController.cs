@@ -18,7 +18,7 @@ namespace TicketSystem.Controllers
         TicketRepository repo = null;
         public HomeController()
         {
-            repo = new TicketRepository();
+            repo = new TicketRepository();  //initiate the repository which will be used to get all the data 
         }
         public ActionResult Index()
         {
@@ -29,6 +29,7 @@ namespace TicketSystem.Controllers
             return View(repo.GetTickets());
         }
 
+        //change language option, and add it to cookies
         public ActionResult ChangeLanguage(string LanguageAbbrevation)
         {
             if (LanguageAbbrevation != null)
@@ -45,15 +46,14 @@ namespace TicketSystem.Controllers
         }
 
         [HttpGet]
-        public ActionResult Search(string search = "")
+        public ActionResult Search(string search = "")  //get list of tickets based on keyword
         {
             return View(repo.GetTickets(search));
         }
 
         public ActionResult SearchGroupByProject()
         {
-            var result = repo.GetTicketsGroupByProject();
-            return View(result);
+            return View(repo.GetTicketsGroupByProject()); //get projects along with the number of its assoicate tickets
         }
 
 
@@ -66,6 +66,7 @@ namespace TicketSystem.Controllers
             dt.Columns.Add("ProjectName", System.Type.GetType("System.String"));
             dt.Columns.Add("TicketCount", System.Type.GetType("System.Int32"));
 
+            //gather data for the chart 
             foreach (var result in repo.GetTicketsGroupByProject())
             {
                 DataRow dr = dt.NewRow();
@@ -83,6 +84,7 @@ namespace TicketSystem.Controllers
                 iData.Add(x);
             }
 
+            //make sure the maximum number (of the chart) is always higher than the highest number 
             ViewBag.Cap = ((max / 10) + 1) * 10;
 
             return Json(iData, JsonRequestBehavior.AllowGet);
