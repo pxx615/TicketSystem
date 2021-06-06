@@ -1,0 +1,45 @@
+﻿@model IEnumerable<TicketSystem.Models.TicketModel>
+
+@using GridMvc.Html
+
+@{
+    ViewBag.Title = "Search";
+}
+
+<div class="jumbotron mainTitle" style="margin-top: 20px;">
+    <h2>@TicketSystem.Resources.SearchText.Title</h2>
+    <p class="lead">@TicketSystem.Resources.SearchText.Description</p>
+</div>
+
+<div class="well">
+    <nav class="navbar navbar-default">
+        <div class="well-sm">
+            @using (Html.BeginForm("Search", "Home", FormMethod.Get, new { @class = "navbar-form navbar-left" }))
+            {
+                <div class="mb-3">
+                    <label for="exampleFormControlInput1" class="form-label">@TicketSystem.Resources.SearchText.SubHeading</label>
+                </div>
+
+                <div class="form-group">
+                    <input type="text" name="search" value="@ViewBag.search" class="form-control" placeholder="@TicketSystem.Resources.SearchText.Placeholder">
+                </div>
+
+                <button type="submit" value="Search" class="btn btn-success">@TicketSystem.Resources.CommonText.Button_confirm</button>
+            }
+        </div>
+    </nav>
+    <div>
+        @Html.Grid(Model).Named("TicketGrid").Columns(c =>
+        {
+            c.Add(x => x.ProjectName).Titled(TicketSystem.Resources.CommonText.Field_projectName).Filterable(true).Sortable(true);
+            c.Add(x => x.Department.DepartmentName).Titled(TicketSystem.Resources.CommonText.Field_department).Filterable(true).Sortable(true);
+            c.Add(x => x.Employee.EmployeeName).Titled(TicketSystem.Resources.CommonText.Field_employee).Filterable(true).Sortable(true);
+            c.Add(x => x.Description).Titled(TicketSystem.Resources.CommonText.Field_description).Filterable(false).Sortable(true);
+            c.Add(x => x.DateTime).Titled(TicketSystem.Resources.CommonText.Field_dateTime).Filterable(true).Sortable(true);
+        }).WithPaging(10).EmptyText(TicketSystem.Resources.CommonText.NotFound)
+
+    </div>
+</div>
+
+<link href="~/Content/search.css" rel="stylesheet" type="text/css" />
+

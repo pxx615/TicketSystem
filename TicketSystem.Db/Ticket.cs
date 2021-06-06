@@ -19,6 +19,7 @@ namespace TicketSystem.Db
         public int DepartmentId { get; set; }
         public int EmployeeId { get; set; }
         public string Description { get; set; }
+        public System.DateTime DateTime { get; set; }
     
         public virtual Department Department { get; set; }
         public virtual Employee Employee { get; set; }

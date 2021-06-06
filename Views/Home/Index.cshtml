@@ -2,30 +2,53 @@
     ViewBag.Title = "Home Page";
 }
 
-<div class="jumbotron">
-    <h1>ASP.NET</h1>
-    <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-    <p><a href="https://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
+
+<div class="jumbotron mainTitle">
+    <h1>@TicketSystem.Resources.IndexText.Title</h1>
+    <p class="lead">@TicketSystem.Resources.IndexText.Description</p>
+    <p class="btn btn-default">@Html.ActionLink(TicketSystem.Resources.IndexText.Button1, "Create", "Home")</p>
+    <p class="btn btn-default">@Html.ActionLink(TicketSystem.Resources.IndexText.Button2, "Search", "Home")</p>
 </div>
 
-<div class="row">
-    <div class="col-md-4">
-        <h2>Getting started</h2>
-        <p>
-            ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-            enables a clean separation of concerns and gives you full control over markup
-            for enjoyable, agile development.
-        </p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
+
+<div class="row" id="r1">
+    <div class="col-md-1"></div>
+    <div class="col-md-3 mainPanel well well-lg">
+        <h2>@TicketSystem.Resources.IndexText.Heading1</h2>
+        <p>@TicketSystem.Resources.IndexText.Paragraph1</p>
+        <p class="btn btn-default">@Html.ActionLink(TicketSystem.Resources.IndexText.Button3, "Create", "Home")</p>
     </div>
-    <div class="col-md-4">
-        <h2>Get more libraries</h2>
-        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Web Hosting</h2>
-        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
-    </div>
+
+    <div class="col-md-7 sidePanel well well-lg"></div>
+    <div class="col-md-1"></div>
 </div>
+
+<div class="row" id="r2">
+    <div class="col-md-1"></div>
+    <div class="col-md-7 sidePanel well well-lg"></div>
+
+    <div class="col-md-3 mainPanel well well-lg">
+        <h2>@TicketSystem.Resources.IndexText.Heading2</h2>
+        <p>@TicketSystem.Resources.IndexText.Paragraph2</p>
+        <p class="btn btn-default">@Html.ActionLink(TicketSystem.Resources.IndexText.Button3, "Search", "Home")</p>
+    </div>
+
+    <div class="col-md-1"></div>
+</div>
+
+<div class="row" id="r3">
+    <div class="col-md-1"></div>
+    <div class="col-md-3 mainPanel well well-lg">
+        <h2>@TicketSystem.Resources.IndexText.Heading3</h2>
+        <p>@TicketSystem.Resources.IndexText.Paragraph3</p>
+        <p class="btn btn-default">@Html.ActionLink(TicketSystem.Resources.IndexText.Button3, "SearchGroupByProject", "Home")</p>
+    </div>
+
+    <div class="col-md-7 sidePanel well well-lg"></div>
+    <div class="col-md-1"></div>
+</div>
+
+
+    <link href="~/Content/index.css" rel="stylesheet" type="text/css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>

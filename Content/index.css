@@ -1,0 +1,54 @@
+﻿body {
+}
+
+.mainTitle {
+    background-image: url(../../images/officeBg_edit.jpg);
+    background-position: 0px -400px;
+    color: white;
+    margin-top: 20px;
+}
+
+.sidePanel {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    opacity: 70%;
+
+    display: none;
+}
+
+#r1 .sidePanel {
+    background-image: url(../../images/officeBg1.jpg);
+}
+
+#r2 .sidePanel {
+    background-image: url(../../images/tickets.jpg);
+}
+
+#r3 .sidePanel {
+    background-image: url(../../images/data.jpg);
+}
+
+@media only screen and (min-width: 990px) {
+    .mainPanel, .sidePanel {
+        min-height: 350px;
+        display: block;
+    }
+
+    .row:hover .sidePanel {
+        opacity: 1;
+        transition: 0.3s;
+    }
+
+    .row:hover .mainPanel {
+        background-color: #e1effc;
+        transition: 0.3s;
+    }
+
+    .mainPanel {
+        justify-content: space-between;
+        flex-direction: column;
+        display: flex;
+    }
+}

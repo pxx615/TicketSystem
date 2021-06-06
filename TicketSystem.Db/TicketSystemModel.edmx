@@ -29,6 +29,7 @@
           <Property Name="DepartmentId" Type="int" Nullable="false" />
           <Property Name="EmployeeId" Type="int" Nullable="false" />
           <Property Name="Description" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="DateTime" Type="datetime" Nullable="false" />
         </EntityType>
         <Association Name="FK_Employee_Employee">
           <End Role="Department" Type="Self.Department" Multiplicity="1" />
@@ -116,6 +117,7 @@
           <Property Name="DepartmentId" Type="Int32" Nullable="false" />
           <Property Name="EmployeeId" Type="Int32" Nullable="false" />
           <Property Name="Description" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="DateTime" Type="DateTime" Nullable="false" Precision="3" />
           <NavigationProperty Name="Department" Relationship="Self.FK_Ticket_Department" FromRole="Ticket" ToRole="Department" />
           <NavigationProperty Name="Employee" Relationship="Self.FK_Ticket_Employee" FromRole="Ticket" ToRole="Employee" />
         </EntityType>
@@ -203,6 +205,7 @@
                 <ScalarProperty Name="DepartmentId" ColumnName="DepartmentId" />
                 <ScalarProperty Name="EmployeeId" ColumnName="EmployeeId" />
                 <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="DateTime" ColumnName="DateTime" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

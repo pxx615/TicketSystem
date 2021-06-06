@@ -1,0 +1,9 @@
+﻿body {
+}
+
+.mainTitle {
+    background-image: url(../../images/data_edit.jpg);
+    background-position: center;
+    color: white;
+    margin-top: 20px;
+}

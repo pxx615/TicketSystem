@@ -64,6 +64,7 @@
     <Compile Include="Ticket.cs">
       <DependentUpon>TicketSystemModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Operations\TicketRepository.cs" />
     <Compile Include="TicketSystemModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -92,6 +93,9 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
     <Content Include="TicketSystemModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>TicketSystemModel.edmx</DependentUpon>
@@ -104,7 +108,10 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+    <ProjectReference Include="..\TicketSystem.Models\TicketSystem.Models.csproj">
+      <Project>{a7c75577-b361-4329-9eed-242a35bbc64c}</Project>
+      <Name>TicketSystem.Models</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

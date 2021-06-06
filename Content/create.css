@@ -1,0 +1,17 @@
+﻿body {
+}
+
+.mainTitle {
+    background-image: url(../../images/officeBg1_edit.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white;
+    margin-top: 20px;
+}
+
+@media only screen and (max-width: 990px) {
+    .form-group .control-label {
+        text-align: left;
+    }
+}
