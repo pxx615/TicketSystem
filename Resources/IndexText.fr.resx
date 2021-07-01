@@ -127,7 +127,7 @@
     <value>Apprendre encore plus</value>
   </data>
   <data name="Description" xml:space="preserve">
-    <value>Cette application Web est conçue pour que les employés demandent de l'aide à l'équipe de soutien informatique de Bell et pour que l'équipe de soutien informatique examine les tickets.</value>
+    <value>Cette application Web est conçue pour que les employés demandent l'assistance de l'équipe d'assistance informatique et pour que l'équipe d'assistance informatique examine les tickets.</value>
   </data>
   <data name="Heading1" xml:space="preserve">
     <value>Demander de l'aide</value>
@@ -148,6 +148,6 @@
     <value>Vous vous demandez combien de tickets sont liés à un projet ? Nous avons regroupé et compté tous les billets pour que vous n'ayez pas à le faire vous-même.</value>
   </data>
   <data name="Title" xml:space="preserve">
-    <value>Système de billetterie de Bell</value>
+    <value>Système de billets</value>
   </data>
 </root>

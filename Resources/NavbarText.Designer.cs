@@ -61,11 +61,11 @@ namespace TicketSystem.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Bell.
+        ///   Looks up a localized string similar to Home.
         /// </summary>
-        public static string Bell {
+        public static string Home {
             get {
-                return ResourceManager.GetString("Bell", resourceCulture);
+                return ResourceManager.GetString("Home", resourceCulture);
             }
         }
         

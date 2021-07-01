@@ -88,7 +88,7 @@ namespace TicketSystem.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to This web application is designed for employees to request support from Bell&apos;s IT support team, and for IT Support team to review tickets..
+        ///   Looks up a localized string similar to This web application is designed for employees to request support from IT support team, and for IT Support team to review tickets..
         /// </summary>
         public static string Description {
             get {
@@ -151,7 +151,7 @@ namespace TicketSystem.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Bell&apos;s Ticket System.
+        ///   Looks up a localized string similar to Ticket System.
         /// </summary>
         public static string Title {
             get {
